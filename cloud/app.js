@@ -23,6 +23,7 @@ app.get('/guitar-chord-game', routes.guitarChordGame);
 app.get('/login', routes.login);
 app.get('/logout', routes.logout);
 app.get('/test', routes.test);
+app.get('/lincoln', routes.lincoln);
 
 // -------------------------- END ROUTING ----------------------------------------------------
 

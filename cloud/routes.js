@@ -71,3 +71,6 @@ exports.test = function(req,res){
   res.render('test');
 }
 
+exports.lincoln = function(req, res){
+  res.render('lincoln.ejs');
+}
