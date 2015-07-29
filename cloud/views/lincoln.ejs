@@ -36,6 +36,7 @@
     }
     .lincolnPage__beeButton {
       margin: 0 auto;
+      z-index: 10;
       -moz-box-shadow: 3px 4px 0px 0px #8a2a21;
       -webkit-box-shadow: 3px 4px 0px 0px #8a2a21;
       box-shadow: 3px 4px 0px 0px #8a2a21;
@@ -110,7 +111,7 @@
     bees.forEach(function(beePic){
       console.log(beePic);
       beePic.beeX = Math.ceil((Math.random() * beeMult) + beePic.beeX);
-      beePic.beeY = Math.ceil(Math.random() + beePic.beeY);
+      beePic.beeY = Math.ceil(Math.random() * (beeMult / 2) + beePic.beeY);
 
       beePic.eImg.style.bottom = beePic.beeY;
       beePic.eImg.style.left = beePic.beeX;
@@ -134,13 +135,12 @@
   function addBee(){
     var img = document.createElement("img");
     img.src = "http://gif-favicon.com/images/insects/bee-insect-bug-transparent-background.gif-0400-10067.gif";
-    img.className = 'lincolnPage__beePic';
+    img.className = 'lincolnPage__beePic lincolnPage__beePic--' + (bees.length + 1);
     var body = document.querySelector("body");
     body.appendChild(img);
 
-
     bees.push({
-      eImg: document.querySelector('.lincolnPage__beePic'),
+      eImg: document.querySelector('.lincolnPage__beePic--' + (bees.length + 1)),
       beeX: 1,
       beeY: 1
     });
